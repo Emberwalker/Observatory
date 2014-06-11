@@ -1,0 +1,6 @@
+[submodule "GeminiAddon"]
+	path = GeminiAddon
+	url = https://github.com/wildstarnasa/GeminiAddon.git
+[submodule "RPCore"]
+	path = RPCore
+	url = https://github.com/wildstarnasa/RPCore.git
