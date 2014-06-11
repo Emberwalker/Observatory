@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Addon Author="Arkan" APIVersion="8" Name="Observatory" Description="RPCore-based profiling.">
-	<!-- Libs -->
+	<!-- Libraries -->
     <Script Name="GeminiAddon\GeminiAddon.lua"/>
     <Script Name="RPCore\RPCore.lua"/>
+    <Script Name="Utils.lua"/>
 	<!-- Observatory -->
     <Script Name="Observatory.lua"/>
     <Form Name="Observatory.xml"/>
