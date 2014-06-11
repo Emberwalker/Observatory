@@ -27,6 +27,7 @@ local RENDER_TRAITS = { -- f = field, hr = human-readable
 -- Called at init
 function Observatory:OnInitialize()
 	-- TODO: Event registration, hooks, frames, load XML, etc.
+	RPCore:SetDebugLevel(3) -- Temporary, REMOVE ME
 	self:GenerateProfileMeta()
 end
 
@@ -134,13 +135,14 @@ end
 -- Persistence
 -----------------------------------------------------------------------------------------------
 function Observatory:OnSave(eLevel)
-	if eLevel ~= GameLib.CodeEnumAddonSaveLevel.General then return nil end
+	if eLevel ~= GameLib.CodeEnumAddonSaveLevel.Character then return nil end
 	return self.playerProfile
 end
 
 function Observatory:OnRestore(eLevel, tData)
-	if eLevel ~= GameLib.CodeEnumAddonSaveLevel.General or not tData then return nil end
+	if eLevel ~= GameLib.CodeEnumAddonSaveLevel.Character or not tData then return nil end
 	self.playerProfile = tData
+	self:SyncProfileToRPC()
 end
 
 
